@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Don't translate app_name -->
     <!--string name="app_name">GSam Battery Monitor</string -->
 
     <!-- Notification & Header messages -->
@@ -25,6 +24,8 @@
     <string name="preferences_show_notification_icon_sum" tools:ignore="StringFormatInvalid">Geef % notificatie-icon weer in notificatiebalk</string>
     <string name="preferences_show_notification_title">Alleen notificatie weergeven</string>
     <string name="preferences_show_notification_sum">Geef de notificatie weer zonder de notificatie-icon</string>
+    <!-- preferences_show_notification_lockscreen_title is not used yet... -->
+    <string name="preferences_show_notification_lockscreen_title">Geef notificatier op Vergrendelscherm</string>
     <string name="preferences_alarm_condition_charging">Batterij boven</string>
     <string name="preferences_alarm_condition_discharging">Batterij onder</string>
     <string name="preferences_alarm_condition_overheated">Batterij oververhit</string>
@@ -54,6 +55,7 @@
     <string name="preferences_show_charging_animation_title">Animatie weergeven tijdens opladen</string>
     <string name="preferences_widget_color_screen_title">Batterij widget-instellingen</string>
     <string name="preferences_app_theme_title">Donker thema gebruiken</string>
+    <string name="preferences_app_theme_title2">App-thema</string>
     <string name="preferences_app_theme_sum">Gebruik een donker thema voor de schermen van de app</string>
     <string name="preferences_time_left_title">Resterende tijd berekenen</string>
     <string name="preferences_time_left_sum">Bereken de resterende tijd op basis van het gebruik over deze tijdschaal</string>
@@ -112,6 +114,8 @@
     <string name="preferences_menu_remove_alarm">Alarm verwijderen</string> 
     <string name="preferences_disable_animation_title">Schermanimaties uitschakelen</string>
     <string name="preferences_disable_animation_sum">Schakelt schermanimaties uit voor tragere apparaten.</string>
+    <string name="preferences_contains_telephony_support_title">Bevat telefoon of data modem</string>
+    <string name="preferences_contains_telephony_support_sum">Sommige apparaten rapporteren telefonie (telefoon / 3G / 4G / LTE) niet correct - in het bijzonder tablets.  Wijzig dit alleen wanneer de gerapporteerde waarde niet juist is. Gerapporteerde waarde:  %1s</string>
     
     <!-- Preference Selection Arrays -->    
     <string name="icon_themes_circle">Circle</string>   
@@ -139,6 +143,8 @@
     <string name="process_suck_mon_title_unplugged">%1$s (sinds laatst ontkoppeld)</string>
     <string name="process_suck_mon_title_fullcharge">%1$s (sinds laatst volledig opgeladen)</string>
     <string name="process_suck_mon_title_customref">%1$s (sinds aangepast referentiepunt)</string>
+    <!-- Suffix gets 'stats_since_X' replaced -->
+    <string name="process_suck_mon_title_suffix">%1$s (%2$s)</string>
     <string name="procsuckmon_viewby_pwr">Bekijk % energiegebruik</string>
     <string name="procsuckmon_viewby_pwr_minforeground">Bekijk % energie (alleen achtergrond CPU)</string>
     <string name="procsuckmon_viewby_cpu">Bekijk CPU-gebruik</string>
@@ -192,7 +198,6 @@
     <string name="main_menu_charts">Grafieken</string>
     <string name="menu_whatsnew">Wat is nieuw?</string>
     <string name="about_about">Over</string>
-    <string name="main_stat_ref_label">* Gebaseerd op aangepast referentiepunt, %1s geleden gemaakt</string>
     <string name="menu_set_custom_ref">Aangemaakt referentiepunt maken</string>
     <string name="menu_remove_custom_ref">Aangemaakt referentiepunt verwijderen</string>
     <string name="menu_refresh">Vernieuw</string>
@@ -209,7 +214,6 @@
     <string name="main_share_subject">Gemiddeld batterijgebruik - GSam Battery Monitor</string>
     <string name="main_share_msg2">Mijn %1$s %2$s batterij gebruikt gemiddeld %3$s (%4$s actief gebruik) na opladen. Bekijk GSam Battery Monitor: - http://bit.ly/uHT7Vy  #badassbattery</string>
     <string name="main_share_msg">Mijn %1$s %2$s batterij gebruikt gemiddeld %3$s na opladen. Bekijk GSam Battery Monitor monitor - http://bit.ly/uHT7Vy #badassbattery</string>
-    <string name="main_avg_timepercharge_label">Gemiddelde batterijcyclus: %1$s</string>
     <string name="main_tablet_battusage_unplug">%1$s%% gebruikt in %2$s (sinds laatst ontkoppeld)</string>
     <string name="main_tablet_battusage_fullcharge">%1$s%% gebruikt in %2$s (sinds laatst opgeladen)</string>
     <string name="main_tablet_battusage_customref">%1$s%% gebruikt in %2$s (sinds aangepast referentiepunt)</string>
@@ -348,6 +352,7 @@
     <string name="main_chart_showtemp">Temperatuur</string>
     <string name="main_chart_showother">Andere</string>
     <string name="main_chart_showradio">Signaal</string>
+    <string name="main_chart_showrate">Rate of Change</string>
     <string name="chart_menu_batthistory">Batterij gegevens grafiek</string>
     <string name="chart_menu_battdischarge">Energie vs percentage grafiek</string>
     <string name="notification_chargecomplete">Volledig opgeladen</string>
@@ -369,6 +374,7 @@
     <string name="chart_med">Gem</string>
     <string name="chart_screen">Display</string>
     <string name="chart_signal">Signaal</string>
+    <string name="chart_rateofchange">\u0394 %/uur</string>
     <string name="chart_tempc">Temperatuur \u00B0C</string>
     <string name="chart_tempf">Temperatuur \u00B0F</string>
     <string name="chart_timeformat">HH:mm</string>
@@ -402,7 +408,26 @@
     <string name="lang_default">Standaard systeemtaal</string>        
     <string name="translator_anonymous">Anoniem</string>
     <!-- NOTE: If they would like credit in the About screen, Translators can optionally put a name & optional HTML link.  You can have > 1 name, just use &lt;BR&gt; The key should be in the form 'translator_lang'-->
+    <string name="translator_ru">Dmitry Chernogaev &lt;a href=\"http://forum.xda-developers.com/member.php?u=4563466\"&gt;(gaich)&lt;/a&gt;</string>        
+    <string name="translator_fr">Jaworski Johan</string>
+    <string name="translator_it">Fabio Abbà &lt;BR&gt; AlphaUMi</string>     
+    <string name="translator_hu">István Kriskó (Stefi)</string>    
+    <string name="translator_cs">Matěj Trakal (&lt;a href=\"http://mtrakal.cz\"&gt;mtrakal&lt;/a&gt;)</string>
+    <string name="translator_sv">Pontus Edgren  &lt;BR&gt; Göran Helsingborg</string>
     <string name="translator_nl">ArTsLeOpS</string>
+    <string name="translator_iw">Michael Sandler (&lt;a href=\"http://sandler.in\"&gt;mich&lt;/a&gt;)</string>
+    <string name="translator_zh_CN">Gavin Fang &lt;BR&gt; myliyifei修补</string>  
+    <string name="translator_tr">Saldıray Günal</string>
+    <string name="translator_pl">www.cvxcvx.pl</string>
+    <string name="translator_de">Jan Fortein</string>
+    <string name="translator_es">Carlos Salazar (&lt;a href=\"http://about.me/carlos_salazar\"&gt;Ulric&lt;/a&gt;) &lt;BR&gt;
+        Broquen (&lt;a href=\"http://forum.xda-developers.com/member.php?u=2695779\"&gt;broquen&lt;/a&gt;)</string>
+    <string name="translator_uk">Yaroslav Brukh</string>
+    <string name="translator_pt_PT">mandriva91</string>
+    <string name="translator_zh_TW">Andy~★</string>
+    <string name="translator_hy">Hrant Ohanyan »» &lt;a href=\"http://haysoft.org\"&gt;HaySoft&lt;/a&gt;</string>
+    <string name="translator_ca">Josep Rey Cases</string>
+    <string name="translator_sk">Pavol Šrank</string>
 
     <!-- Only Applicable to Paid/Pro Version (or marketing of said version) -->
     <string name="appdetail_details_adjust_screen_market_bsd_title">Is je display te fel?</string>
